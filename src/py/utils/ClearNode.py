@@ -21,12 +21,14 @@ def clear_input():
     for file in os.listdir(input_dir):
         # Exclude Example Img
         if file != "example.png":
-            os.remove(os.path.join(input_dir, file))
+            if not os.path.isdir(file):            
+                os.remove(os.path.join(input_dir, file))
 
 def clear_output():
     # Clear Dir
     for file in os.listdir(output_dir):
-        os.remove(os.path.join(output_dir, file))
+        if not os.path.isdir(file):
+            os.remove(os.path.join(output_dir, file))
      
 any = AnyType("*")
 class ClearNode:
@@ -71,7 +73,7 @@ class ClearNode:
                 clear_output()
                 
         except Exception:
-            ErrorHandler().handle_error("utils", f"Error Clearing Cache.")
+            ErrorHandler().handle_error("utils", f"Error Clearing.")
             return (None, )
         
         return (None,)

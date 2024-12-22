@@ -2,7 +2,7 @@ import { app } from "../../scripts/app.js";
 
 function make_submenu(value, options, e, menu, node) {
     const submenu = new LiteGraph.ContextMenu(
-        ["⭐Visit on Github⭐", "❤️Donate on Ko-F❤️i",],
+        ["⭐Visit on Github⭐", "❤️Donate on Ko-Fi❤️",],
         { 
             event: e, 
             callback: function (v) { 

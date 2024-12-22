@@ -1,7 +1,7 @@
 [project]
 name = "comfyui-x-rework"
-description = "This is a plugin for ComfyUI that adds new Util Nodes and makes Lora training in ComfyUI abel. Except that it adds a new Features for Images."
-version = "1.4.0"
+description = "This is a plugin for ComfyUI that adds new Util Nodes and Nodes for easier image creation and sharing."
+version = "1.4.5"
 license = {file = "LICENSE"}
 
 [project.urls]

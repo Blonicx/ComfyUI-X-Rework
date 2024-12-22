@@ -18,7 +18,8 @@ XREWORK_COMFYUI_VERSION = config['project']['version']
 
 RESET_COLOR = "\033[0m"
 GREEN_COLOR = "\033[92m"
-print(GREEN_COLOR + f"X-Rework Version {XREWORK_COMFYUI_VERSION} loaded successfully!" + RESET_COLOR)
+LIGHT_BROWN = "\033[38;5;173m"
+print("[" + LIGHT_BROWN + "STATUS" + RESET_COLOR + "] " + GREEN_COLOR + f"X-Rework Version {XREWORK_COMFYUI_VERSION} loaded successfully!" + RESET_COLOR)
 
 NODE_CLASS_MAPPINGS = {
     "ClearNode" : ClearNode,

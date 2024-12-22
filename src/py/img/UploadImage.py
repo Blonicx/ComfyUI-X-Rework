@@ -24,7 +24,7 @@ class UploadImage:
             "required": {
                 "images": ("IMAGE", {"tooltip": "The images to save."}),
                 "save_image": ("BOOLEAN", {"default": False}),
-                "webhook_url": ("STRING", {"default" : ""}, {"tooltip": "The Url the Image should be send to."}),
+                "webhook_url": ("STRING", {"default" : ""}, {"tooltip": "The Url the Image should be send to. Leave empty for X-Rework Discord."}),
             },
             "optional": {
             }

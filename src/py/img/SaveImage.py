@@ -1,6 +1,7 @@
 import numpy as np
 import folder_paths
 import json
+import time
 import os
 
 from comfy.cli_args import args
@@ -55,7 +56,7 @@ class XSave:
                             metadata.add_text(x, json.dumps(extra_pnginfo[x]))
 
                 filename_with_batch_num = filename.replace("%batch_num%", str(batch_number))
-                file = f"{filename_with_batch_num}_{counter:05}_.png"
+                file = f"{filename_with_batch_num}_{counter:05}_{str(time.time())}.png"
                 if sub_path == "None":
                     img.save(os.path.join(full_output_folder, file), pnginfo=metadata, compress_level=self.compress_level)
                     results.append({
@@ -64,6 +65,7 @@ class XSave:
                         "type": self.type
                     })
                 else:
+                    if not os.path.exists(os.path.join(full_output_folder, sub_path)): os.mkdir(os.path.join(full_output_folder, sub_path))
                     img.save(os.path.join(full_output_folder, sub_path, file), pnginfo=metadata, compress_level=self.compress_level)                
                     results.append({
                         "filename": file,
