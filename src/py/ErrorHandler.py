@@ -6,6 +6,7 @@ class ErrorHandler:
         self.error_log = []  # Initialize an error log to store error messages
         self.suppressed_errors = set()  # Set of error types to suppress
     
+    # Error handling methods#
     def log_error(self, error):
         """Logs the error message with timestamp and traceback."""
         error_message = f"{datetime.now()}: {type(error).__name__}: {error}"
