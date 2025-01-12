@@ -10,6 +10,7 @@ from .src.py.utils.ClearNode import ClearNode
 from .src.py.img.LoadImage import LoadImageURL
 from .src.py.img.UploadImage import UploadImage
 from .src.py.img.SaveImage import XSave
+from .src.py.sampler.XSampler import XSampler
 
 config_path = pathlib.Path(__file__).parent.resolve()
 config = None
@@ -29,7 +30,7 @@ NODE_CLASS_MAPPINGS = {
     "LoadImageURL" : LoadImageURL,
     "UploadImage" : UploadImage,
     "XSave" : XSave,
-    #"XSampler" : XSampler,
+    "XSampler" : XSampler,
 }
 
 NODE_DISPLAY_NAME_MAPPINGS = {
@@ -37,7 +38,7 @@ NODE_DISPLAY_NAME_MAPPINGS = {
     "LoadImageURL" : "LoadImage (URL)",
     "UploadImage" : "UploadImage (DISCORD)",
     "XSave" : "XSave",
-    #"XSampler" : "XSampler",
+    "XSampler" : "XSampler",
 }
 
 WEB_DIRECTORY = "./src/web"

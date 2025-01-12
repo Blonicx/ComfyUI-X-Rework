@@ -3,4 +3,4 @@ This tool is their to help [ComfyUI](https://github.com/comfyanonymous/ComfyUI) 
 
 ## Support ##
 If you want to help the Project and submit Code you can do that by creating a fork and then a pull requests where you compare the main Branche and your Fork.
-You can support me [**here**](https://ko-fi.com/blonicx)
+You can support me [**here**](https://ko-fi.com/blonicx).

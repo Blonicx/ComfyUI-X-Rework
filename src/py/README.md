@@ -13,4 +13,8 @@
 - [x] UploadImage (DISCORD-WEBHOOK)
 
 ### Sampler
-- [ ] XSampler
+- [X] XSampler
+
+### Server
+- [ ] Errors for Server
+- [ ] Extend and Improve Server
