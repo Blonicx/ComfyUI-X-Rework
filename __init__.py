@@ -2,6 +2,10 @@ import toml
 import os
 import pathlib
 
+## Server ##
+from .server import server
+
+## Nodes ##
 from .src.py.utils.ClearNode import ClearNode
 from .src.py.img.LoadImage import LoadImageURL
 from .src.py.img.UploadImage import UploadImage

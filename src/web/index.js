@@ -1,8 +1,16 @@
 import { app } from "../../scripts/app.js";
+import { api } from "../../scripts/api.js";
+
+// Funcs //
+function send_gallery_status(status){
+    const body = new FormData();
+    body.append("status", status);
+    api.fetchApi("/gallery/status", { method: "POST", body, });
+}
 
 function make_submenu(value, options, e, menu, node) {
     const submenu = new LiteGraph.ContextMenu(
-        ["⭐Visit on Github⭐", "❤️Donate on Ko-Fi❤️",],
+        ["⭐Visit on Github⭐", "📜Open Workflow Folder📜", "❤️Donate on Ko-Fi❤️",],
         { 
             event: e, 
             callback: function (v) { 
@@ -22,9 +30,22 @@ function make_submenu(value, options, e, menu, node) {
     )
 }
 
+// Register Extension //
 app.registerExtension({ 
 	name: "com.blonicx.comfyui-x-rework",
-	async setup() {
+    settings: [
+        {
+            id: "X-Rework.Gallery",
+            name: "Enable Gallery",
+            type: "boolean",
+            defaultValue: false,
+            onChange: (newVal, oldVal) => {
+                send_gallery_status(newVal);
+            },            
+        },
+    ],	
+    
+    async setup() {
         const original_getCanvasMenuOptions = LGraphCanvas.prototype.getCanvasMenuOptions;
         LGraphCanvas.prototype.getCanvasMenuOptions = function () {
             const options = original_getCanvasMenuOptions.apply(this, arguments);
