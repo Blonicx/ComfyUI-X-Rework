@@ -19,6 +19,13 @@ ul {
   padding: 0;
 }
 
+footer {
+  text-align: center;
+  position: relative;
+  padding: 10px 0;    
+  bottom: 0;
+}
+
 /* Items */
 div.tabs {
   display: flex;
@@ -38,7 +45,7 @@ div.tab {
 }
 
 div.tab:hover {
-  background-color: #4caf4f91;
+  background-color: #dddddd;
 }
 
 div.tab.active {

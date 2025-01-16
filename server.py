@@ -5,7 +5,7 @@ import server
 web = server.web
 
 ## Files ##
-mainpage_files = os.path.join(pathlib.Path(__file__).parent.resolve(), "src", "web")
+mainpage_files = os.path.join(pathlib.Path(__file__).parent.resolve(), "src", "web", "index_website")
 gallery_files = os.path.join(pathlib.Path(__file__).parent.resolve(), "src", "web", "gallery")
 
 ## Main Page ##
