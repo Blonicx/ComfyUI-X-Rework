@@ -1,22 +1,22 @@
 /* Global */
 body {
-    margin: 0;
-    padding: 0;
-    font-family: 'Fredoka One';
-    background-color: #f0f0f0;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
-    color: #333;
-    background-color: gray;
+  margin: 0;
+  padding: 0;
+  font-family: "Fredoka One";
+  background-color: #f0f0f0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  color: #333;
+  background-color: gray;
 }
 
 /* Global Items */
 ul {
-    list-style-type: none;
-    margin: 0;
-    padding: 0;
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
 }
 
 /* Items */
@@ -56,22 +56,22 @@ div.tab-content.active {
 }
 
 .main-container {
-    text-align: center;
-    padding: 20px;
-    background: #fff;
-    border-radius: 10px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    max-width: 500px;
-    width: 90%;
+  text-align: center;
+  padding: 20px;
+  background: #fff;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  max-width: 500px;
+  width: 90%;
 }
 
 .content h1 {
-    font-size: 2.5em;
-    margin-bottom: 20px;
-    color: #000000;
+  font-size: 2.5em;
+  margin-bottom: 20px;
+  color: #000000;
 }
 
 .content p {
-    font-size: 1.2em;
-    color: #7a7a7a;
+  font-size: 1.2em;
+  color: #7a7a7a;
 }
