@@ -33,18 +33,6 @@ function make_submenu(value, options, e, menu, node) {
 // Register Extension //
 app.registerExtension({ 
 	name: "com.blonicx.comfyui-x-rework",
-    settings: [
-        {
-            id: "X-Rework.Gallery",
-            name: "Enable Gallery",
-            type: "boolean",
-            defaultValue: false,
-            onChange: (newVal, oldVal) => {
-                send_gallery_status(newVal);
-            },            
-        },
-    ],	
-    
     async setup() {
         const original_getCanvasMenuOptions = LGraphCanvas.prototype.getCanvasMenuOptions;
         LGraphCanvas.prototype.getCanvasMenuOptions = function () {
