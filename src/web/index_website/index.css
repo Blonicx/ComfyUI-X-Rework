@@ -37,6 +37,8 @@ div.tab {
   padding: 14px 20px;
   cursor: pointer;
   color: rgb(0, 0, 0);
+  flex: 1;
+  text-align: center;  
   margin: 3px;
   margin-top: 15px;
   border: 2.5px solid black;
@@ -55,6 +57,7 @@ div.tab.active {
 div.tab-content {
   display: none;
   padding: 20px;
+  min-height: 225px;
   background-color: white;
 }
 
@@ -84,8 +87,8 @@ div.content p {
 }
 
 img.donate-icon {
-  width: 50px;
-  height: 50px;
+  width: 100px;
+  height: 100px;
   cursor: pointer;
   margin: 10px;
 }
