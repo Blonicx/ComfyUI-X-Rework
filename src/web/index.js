@@ -2,11 +2,9 @@ import { app } from "../../scripts/app.js";
 import { api } from "../../scripts/api.js";
 
 // Funcs //
-function send_gallery_status(status){
-    const body = new FormData();
-    body.append("status", status);
-    api.fetchApi("/gallery/status", { method: "POST", body, });
-}
+api.addEventListener("xrework.stop_workflow", () => {
+    api.fetchApi("/interrupt", { method: "POST",})
+});
 
 function make_submenu(value, options, e, menu, node) {
     const submenu = new LiteGraph.ContextMenu(
