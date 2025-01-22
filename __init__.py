@@ -15,6 +15,10 @@ from .src.py.sampler.XSampler import XSampler
 config_path = pathlib.Path(__file__).parent.resolve()
 config = None
 
+if not os.path.exists(os.path.join(config_path,'.env')):
+    with open(os.path.join(config_path,'.env'), 'w') as f:
+        f.write("")
+
 with open(os.path.join(config_path,'pyproject.toml'), 'r') as f:
     config = toml.load(f)
 
