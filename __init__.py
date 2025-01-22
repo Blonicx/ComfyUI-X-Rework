@@ -39,7 +39,7 @@ NODE_DISPLAY_NAME_MAPPINGS = {
     "ClearNode" : "ClearNode",
     "StopNode" : "StopNode",
     "LoadImageURL" : "LoadImage (URL)",
-    "UploadImage" : "UploadImage (DISCORD)",
+    "UploadImage" : "UploadImage",
     "XSave" : "XSave",
     "XSampler" : "XSampler",
 }
