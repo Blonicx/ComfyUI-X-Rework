@@ -60,7 +60,7 @@ class UploadImage:
     
     OUTPUT_NODE = True    
     
-    def upload_image(self, images, save_image, upload_discord, filename_prefix="temp", prompt=None, extra_pnginfo=None):
+    def upload_image(self, images, save_image, upload_discord, filename_prefix="xrework", prompt=None, extra_pnginfo=None):
         try:
             filename_prefix += self.prefix_append
             full_output_folder, filename, counter, subfolder, filename_prefix = folder_paths.get_save_image_path(filename_prefix, self.output_dir, images[0].shape[1], images[0].shape[0])
