@@ -17,7 +17,7 @@ dotnev_path = os.path.join(pathlib.Path(__file__).parent.parent.parent.parent.re
 
 load_dotenv(dotenv_path=dotnev_path)
 
-webhook_url=os.getenv('DISCORD_WEBHOOK_URL')
+webhook_url=os.getenv('DISCORD_WEBHOOK')
 
 def upload_img_discord(img_path):
     if webhook_url != "":
