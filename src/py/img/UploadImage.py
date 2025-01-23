@@ -1,15 +1,38 @@
 import requests
 import folder_paths
+import pathlib
 import os
 import json
 import time
 import numpy as np
 
+from dotenv import load_dotenv
 from PIL import Image
 from PIL.PngImagePlugin import PngInfo
 from comfy.cli_args import args
 
 from ..ErrorHandler import ErrorHandler
+
+dotnev_path = os.path.join(pathlib.Path(__file__).parent.parent.parent.parent.resolve(), ".env")
+
+load_dotenv(dotenv_path=dotnev_path)
+
+webhook_url=os.getenv('DISCORD_WEBHOOK')
+
+def upload_img_discord(img_path):
+    if webhook_url != "":
+        pass
+    else: ErrorHandler().handle_error("image", f"Error sending image to {webhook_url}.")
+    
+    file = open(img_path, 'rb')
+
+    files = {
+        'media': file
+    }
+
+    requests.post(webhook_url, files=files)
+    
+    file.close()
 
 class UploadImage:
     def __init__(self):
@@ -22,9 +45,9 @@ class UploadImage:
     def INPUT_TYPES(cls):
         return {
             "required": {
-                "images": ("IMAGE", {"tooltip": "The images to save."}),
-                "save_image": ("BOOLEAN", {"default": False}),
-                "webhook_url": ("STRING", {"default" : ""}, {"tooltip": "The Url the Image should be send to. Leave empty for X-Rework Discord."}),
+                "images": ("IMAGE", {"tooltip": "The images to upload."}),
+                "save_image": ("BOOLEAN", {"default": True}),
+                "upload_discord": ("BOOLEAN", {"default": False}),
             },
             "optional": {
             }
@@ -37,7 +60,7 @@ class UploadImage:
     
     OUTPUT_NODE = True    
     
-    def upload_image(self, images, save_image, webhook_url, filename_prefix="temp", prompt=None, extra_pnginfo=None):
+    def upload_image(self, images, save_image, upload_discord, filename_prefix="xrework", prompt=None, extra_pnginfo=None):
         try:
             filename_prefix += self.prefix_append
             full_output_folder, filename, counter, subfolder, filename_prefix = folder_paths.get_save_image_path(filename_prefix, self.output_dir, images[0].shape[1], images[0].shape[0])
@@ -55,7 +78,7 @@ class UploadImage:
 
                 file = None
                 results = None
-                
+
                 if save_image:
                     file = f'image_{str(time.time())}.png'
                     results = list()
@@ -66,25 +89,12 @@ class UploadImage:
                     })
                 else:
                     file = f"temp_file.png"
-                
+
                 img_path = os.path.join(full_output_folder, file)
                 img.save(img_path, pnginfo=metadata, compress_level=self.compress_level)
 
-                file = open(img_path, 'rb')
-
-                files = {
-                    'media': file
-                }
-
-                if webhook_url != "":
-                    requests.post(webhook_url, files=files)
-                else: requests.post("https://discord.com/api/webhooks/1318942935194009615/PPJr78Bc8Q9MLYRn7ATuIOwPYNg5ukqXjIpCAhpUzntZ2piovjAZFsPKFNjjMf6Hvjkq", files=files)
-                
-                file.close()
-        
-        except Exception:
-            ErrorHandler().handle_error("image", f"Error sending image to {webhook_url}.")
-            return (None, )
+                if upload_discord == True:
+                    upload_img_discord(img_path)
         
         finally:
             if save_image:

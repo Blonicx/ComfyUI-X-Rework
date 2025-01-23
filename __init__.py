@@ -7,6 +7,7 @@ from .server import server
 
 ## Nodes ##
 from .src.py.utils.ClearNode import ClearNode
+from .src.py.utils.StopNode import StopNode
 from .src.py.img.LoadImage import LoadImageURL
 from .src.py.img.UploadImage import UploadImage
 from .src.py.img.SaveImage import XSave
@@ -33,6 +34,7 @@ print("[" + LIGHT_BROWN + "STATUS" + RESET_COLOR + "] " + GREEN_COLOR + f"X-Rewo
 
 NODE_CLASS_MAPPINGS = {
     "ClearNode" : ClearNode,
+    "StopNode" : StopNode,
     "LoadImageURL" : LoadImageURL,
     "UploadImage" : UploadImage,
     "XSave" : XSave,
@@ -41,8 +43,9 @@ NODE_CLASS_MAPPINGS = {
 
 NODE_DISPLAY_NAME_MAPPINGS = {
     "ClearNode" : "ClearNode",
+    "StopNode" : "StopNode",
     "LoadImageURL" : "LoadImage (URL)",
-    "UploadImage" : "UploadImage (DISCORD)",
+    "UploadImage" : "UploadImage",
     "XSave" : "XSave",
     "XSampler" : "XSampler",
 }
