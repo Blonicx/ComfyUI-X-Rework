@@ -17,7 +17,9 @@ config = None
 
 if not os.path.exists(os.path.join(config_path,'.env')):
     with open(os.path.join(config_path,'.env'), 'w') as f:
-        f.write("")
+        f.write("""
+DISCORD_WEBHOOK=""
+                """)
 
 with open(os.path.join(config_path,'pyproject.toml'), 'r') as f:
     config = toml.load(f)
